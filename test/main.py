@@ -62,6 +62,10 @@ class Item(BaseModel):
 def read_api_data(user_id: int):
     return [user for user in test if user.get("id") == user_id]
 
+@app.get("/post")
+def get_post(user_id: int):
+    query = f"SELECT * FROM users WHERE id = {user_id}"
+
 
 
 @app.post("/api/data")

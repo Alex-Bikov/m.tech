@@ -1,3 +1,4 @@
+import sqlalchemy
 from sqlalchemy import MetaData, Table, Column, INTEGER, String, TIMESTAMP
 
 
@@ -11,3 +12,8 @@ data = Table(
     Column("uri", String),
     Column("")
 )
+
+DATABASE_URL = "postgresql:"
+
+engine = sqlalchemy.create_engine(DATABASE_URL)
+metadata.create_all(engine)
